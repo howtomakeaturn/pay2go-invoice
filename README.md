@@ -62,6 +62,10 @@ $params = [
     "NotifyEmail" => "1", //1=通知,0=不通知
 ];
 
+$pay2go->setParams($params);
+
+$result = $pay2go->send();
+
 ```
 
 # Exceptions
