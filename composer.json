@@ -6,7 +6,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Howtomakeaturn\\Pay2goInvoice": "src/"
+            "Howtomakeaturn\\Pay2goInvoice\\": "src/"
         }
     }
 }
