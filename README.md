@@ -1,5 +1,7 @@
 # 智付寶（pay2go）電子發票 wrapper
 
+## 注意：目前只有實作「開立發票」API。「作廢發票」、「查詢發票」等等API，近期內尚無規劃實作。
+
 Pay2goInvoice是一個用來呼叫智付寶電子發票API的library。
 
 請參閱智付寶電子發票文件使用本library。
