@@ -17,6 +17,8 @@ composer require "howtomakeaturn/pay2go-invoice:1.*"
 
 
 ```php
+//記得先手動、或是利用composer載入套件
+
 $pay2go = new Howtomakeaturn\Pay2goInvoice\Pay2goInvoice();
 
 $pay2go->setMerchantId('xxx'); //設定商店代號
