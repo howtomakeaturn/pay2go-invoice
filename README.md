@@ -8,7 +8,7 @@ https://www.pay2go.com/info/site_description/api_description
 
 # 安裝
 
-You can just download the file to your project, or install it via composer:
+您可以直接將檔案下載使用。或是使用composer安裝：
 ```
 composer require "howtomakeaturn/pay2go-invoice:1.*"
 ```
