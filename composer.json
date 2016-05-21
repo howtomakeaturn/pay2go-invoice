@@ -1,0 +1,12 @@
+{
+    "name": "howtomakeaturn/pay2go-invoice",
+    "type": "library",
+    "description": "send e-invoice with pay2go",
+    "keywords": ["e-invoice", "pay2go"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Howtomakeaturn\\Pay2goInvoice": "src/"
+        }
+    }
+}
