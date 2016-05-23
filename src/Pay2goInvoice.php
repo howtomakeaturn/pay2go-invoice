@@ -14,8 +14,6 @@ class Pay2goInvoice
     protected $hashKey;
     protected $hashIv;
 
-    protected $params;
-
     function setMerchantId($id)
     {
         $this->merchantId = $id;
@@ -31,16 +29,11 @@ class Pay2goInvoice
         $this->hashIv = $hashIv;
     }
 
-    function setParams($params)
+    function send($params)
     {
-        $this->params = $params;
-    }
+        if ($params == null) throw new Exception\GeneralException("Parameters are not set.");
 
-    function send()
-    {
-        if ($this->params == null) throw new Exception\GeneralException("Parameters are not set.");
-
-        $post_data = $this->encryptParams($this->params);
+        $post_data = $this->encryptParams($params);
 
         $transaction_data_array = array(
             "MerchantID_" => $this->merchantId,
