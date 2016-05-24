@@ -4,7 +4,6 @@ namespace Howtomakeaturn\Pay2goInvoice;
 
 class Pay2goInvoice
 {
-
     protected $liveEndpoint = 'https://inv.pay2go.com/API/invoice_issue';
     protected $testEndpoint = 'https://cinv.pay2go.com/API/invoice_issue';
     protected $testMode = false;
@@ -14,30 +13,32 @@ class Pay2goInvoice
     protected $hashKey;
     protected $hashIv;
 
-    function setMerchantId($id)
+    public function setMerchantId($id)
     {
         $this->merchantId = $id;
     }
 
-    function setHashKey($hashKey)
+    public function setHashKey($hashKey)
     {
         $this->hashKey = $hashKey;
     }
 
-    function setHashIv($hashIv)
+    public function setHashIv($hashIv)
     {
         $this->hashIv = $hashIv;
     }
 
-    function send($params)
+    public function send($params)
     {
-        if ($params == null) throw new Exception\GeneralException("Parameters are not set.");
+        if ($params == null) {
+            throw new Exception\GeneralException('Parameters are not set.');
+        }
 
         $post_data = $this->encryptParams($params);
 
         $transaction_data_array = array(
-            "MerchantID_" => $this->merchantId,
-            "PostData_" => $post_data
+            'MerchantID_' => $this->merchantId,
+            'PostData_' => $post_data,
         );
 
         $transaction_data_str = http_build_query($transaction_data_array);
@@ -47,7 +48,7 @@ class Pay2goInvoice
         $response = json_decode($result['web_info'], true);
 
         if ($response['Status'] !== 'SUCCESS') {
-            throw new Exception\GeneralException($response['Status'] . ': ' .$response['Message']);
+            throw new Exception\GeneralException($response['Status'].': '.$response['Message']);
         }
 
         return $result;
@@ -62,7 +63,7 @@ class Pay2goInvoice
         return $post_data;
     }
 
-    function setTestMode($bool)
+    public function setTestMode($bool)
     {
         $this->testMode = $bool;
     }
@@ -71,5 +72,4 @@ class Pay2goInvoice
     {
         return $this->testMode ? $this->testEndpoint : $this->liveEndpoint;
     }
-
 }
