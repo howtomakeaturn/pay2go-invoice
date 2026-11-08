@@ -4,8 +4,8 @@ namespace Howtomakeaturn\Pay2goInvoice;
 
 class Pay2goInvoice
 {
-    protected $liveEndpoint = 'https://inv.pay2go.com/API/invoice_issue';
-    protected $testEndpoint = 'https://cinv.pay2go.com/API/invoice_issue';
+    protected $liveEndpoint = 'https://inv.ezpay.com.tw/Api/invoice_issue';
+    protected $testEndpoint = 'https://cinv.ezpay.com.tw/Api/invoice_issue';
     protected $testMode = false;
 
     protected $merchantId;

@@ -6,7 +6,7 @@ Pay2goInvoice是一個用來呼叫智付寶電子發票API的library。
 
 請參閱智付寶電子發票文件使用本library。
 
-https://www.pay2go.com/info/site_description/api_description
+https://inv.ezpay.com.tw/dw_files/info_api/EZP_INVI_1_2_1.pdf
 
 # 安裝
 
@@ -32,7 +32,7 @@ $pay2go->setHashIv('xxx'); //設定hash iv
 $pay2go->setTestMode(True); //測試環境請加上這行
 
 //請參閱官方文件設定參數
-//https://www.pay2go.com/info/site_description/api_description
+//https://inv.ezpay.com.tw/dw_files/info_api/EZP_INVI_1_2_1.pdf
 
 $params = [
     "RespondType" => "JSON",
